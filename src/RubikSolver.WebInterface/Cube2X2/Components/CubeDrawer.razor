@@ -1,0 +1,32 @@
+@using RubikSolver.WebInterface.Data.Models
+
+<div class="cube-drawer">
+    <div class="side-left-drawer">
+        <SideDrawer Side="@Sides[0]" CurrentColor="@CurrentColor" />
+    </div>
+    <div class="side-front-drawer">
+        <SideDrawer Side="@Sides[1]" CurrentColor="@CurrentColor" />
+    </div>
+    <div class="side-right-drawer">
+        <SideDrawer Side="@Sides[2]" CurrentColor="@CurrentColor" />
+    </div>
+    <div class="side-back-drawer">
+        <SideDrawer Side="@Sides[3]" CurrentColor="@CurrentColor" />
+    </div>
+    <div class="side-up-drawer">
+        <SideDrawer Side="@Sides[4]" CurrentColor="@CurrentColor" />
+    </div>
+    <div class="side-down-drawer">
+        <SideDrawer Side="@Sides[5]" CurrentColor="@CurrentColor" />
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public required Side[] Sides { get; set; }
+    
+    [Parameter]
+    public Color CurrentColor { get; set; }
+
+}

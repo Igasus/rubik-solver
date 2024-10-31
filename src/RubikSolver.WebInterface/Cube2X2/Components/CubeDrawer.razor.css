@@ -1,0 +1,33 @@
+.cube-drawer {
+    display: grid;
+    grid-template-columns: 15vw 15vw 15vw 15vw;
+    grid-template-rows: 15vw 15vw 15vw;
+    grid-template-areas: 
+        ". up . ."
+        "left front right back"
+        ". down . .";
+}
+
+.side-left-drawer {
+    grid-area: left;
+}
+
+.side-front-drawer {
+    grid-area: front;
+}
+
+.side-right-drawer {
+    grid-area: right;
+}
+
+.side-back-drawer {
+    grid-area: back;
+}
+
+.side-up-drawer {
+    grid-area: up;
+}
+
+.side-down-drawer {
+    grid-area: down;
+}

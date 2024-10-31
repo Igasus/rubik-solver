@@ -1,0 +1,39 @@
+@page "/2x2"
+
+@using RubikSolver.WebInterface.Data.Models
+@using RubikSolver.WebInterface.Data.Services.Interfaces
+
+@inject ICube2X2Service Cube2X2Service
+
+<CubeDrawer Sides="@Sides" CurrentColor="@CurrentColor" />
+<ColorPicker @bind-CurrentColor="@CurrentColor" />
+<div>
+    <button @onclick="GetFormulaAsync">Get formula:</button>
+    <text>@LastFormula</text>
+</div>
+
+
+@code {
+    
+    private Color CurrentColor { get; set; } = Color.White;
+    private Side[] Sides { get; set; } = new Side[6];
+    private string LastFormula { get; set; } = string.Empty;
+
+    protected override void OnInitialized()
+    {
+        for (var i = 0; i < Sides.Length; i++)
+            Sides[i] = new Side();
+        
+        base.OnInitialized();
+    }
+
+    private async Task GetFormulaAsync()
+    {
+        var formula = await Cube2X2Service.SolveCubeAsync(Sides);
+
+        LastFormula = formula.Length == 0
+            ? "Formula not found or input is invalid"
+            : string.Join(' ', formula);
+    }
+
+}

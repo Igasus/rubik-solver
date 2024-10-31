@@ -1,0 +1,22 @@
+@using RubikSolver.WebInterface.Data.Models
+
+<div class="grid grid-cols-2 w-full h-full">
+    @for (var i = 0; i < 2; i++)
+    for (var j = 0; j < 2; j++)
+    {
+        var row = i;
+        var col = j;
+        <div class="cursor-pointer border-1 @(Side.Colors[row][col].GetBackgroundClass())"
+             @onclick="() => Side.Colors[row][col] = CurrentColor"></div>
+    }
+</div>
+
+@code {
+
+    [Parameter]
+    public Color CurrentColor { get; set; }
+    
+    [Parameter]
+    public required Side Side { get; set; }
+    
+}

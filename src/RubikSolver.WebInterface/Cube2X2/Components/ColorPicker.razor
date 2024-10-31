@@ -1,0 +1,36 @@
+@using RubikSolver.WebInterface.Data.Models
+
+<div class="flex">
+    @foreach (var color in Enum.GetValues<Color>())
+    {
+        var currentColor = color;
+        <div class="w-16 h-16 border-1 cursor-pointer @(currentColor.GetBackgroundClass())"
+             @onclick="@(() => CurrentColor = currentColor)">
+            <text>@currentColor.ToString()</text>
+        </div>
+    }
+</div>
+
+@code {
+    
+    private Color _currentColor;
+    
+    [Parameter]
+    public Color CurrentColor
+    {
+        get => _currentColor;
+        set
+        {
+            if (_currentColor == value)
+                return;
+            
+            _currentColor = value;
+            CurrentColorChanged.InvokeAsync(value);
+            Console.WriteLine(value);
+        }
+    }
+    
+    [Parameter]
+    public EventCallback<Color> CurrentColorChanged { get; set; }
+    
+}
