@@ -20,7 +20,7 @@ public class Piece : IDisposable, IAsyncDisposable
         }
 
         ArgumentNullException.ThrowIfNull(colorIndexes);
-        
+
         OriginalPositionIndex = originalPositionIndex;
         ColorIndexes = colorIndexes;
         CurrentPositionIndex = originalPositionIndex;

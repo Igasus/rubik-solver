@@ -26,7 +26,7 @@ public class Cube : IDisposable, IAsyncDisposable
         var pieces = Pieces.Select(x => x.Copy()).ToArray();
         return new Cube(pieces);
     }
-    
+
     #region Rotation
 
     public void RotateUp()
@@ -82,7 +82,7 @@ public class Cube : IDisposable, IAsyncDisposable
         _piecesByCurrentPositionIndex[3].Move(7, 1);
         RefreshDictionary();
     }
-    
+
     private void RefreshDictionary()
     {
         var allPieces = Pieces;
@@ -92,7 +92,7 @@ public class Cube : IDisposable, IAsyncDisposable
                 allPieces.First(x => x.CurrentPositionIndex == positionIndex);
         }
     }
-    
+
     #endregion
 
     public void Dispose()
@@ -100,7 +100,7 @@ public class Cube : IDisposable, IAsyncDisposable
         var pieces = _piecesByCurrentPositionIndex.Values.ToList();
         foreach (var piece in pieces)
             piece.Dispose();
-        
+
         _piecesByCurrentPositionIndex.Clear();
         GC.SuppressFinalize(this);
     }
@@ -110,7 +110,7 @@ public class Cube : IDisposable, IAsyncDisposable
         var pieces = _piecesByCurrentPositionIndex.Values.ToList();
         foreach (var piece in pieces)
             await piece.DisposeAsync();
-        
+
         _piecesByCurrentPositionIndex.Clear();
         GC.SuppressFinalize(this);
     }

@@ -3,12 +3,12 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>net8.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
+        <ImplicitUsings>disable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\RubikSolver.Cube2X2.Application\RubikSolver.Cube2X2.Application.csproj" />
+      <ProjectReference Include="..\Cube2X2\RubikSolver.Cube2X2.Application\RubikSolver.Cube2X2.Application.csproj" />
     </ItemGroup>
 
 </Project>

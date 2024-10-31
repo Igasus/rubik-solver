@@ -1,6 +1,6 @@
 using RubikSolver.Cube2X2.Core.Models;
 
-namespace RubikSolver.Application.Cube2X2.Hashing;
+namespace RubikSolver.Cube2X2.Application.Hashing;
 
 public interface ICubeHashManager
 {

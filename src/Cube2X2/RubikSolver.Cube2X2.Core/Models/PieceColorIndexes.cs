@@ -19,7 +19,7 @@ public class PieceColorIndexes : IDisposable, IAsyncDisposable
 
         if (tertiary >= Constants.CubeColorsCount)
             throw new ArgumentException(ErrorMessages.InvalidColorIndex, nameof(tertiary));
-                
+
         Primary = primary;
         Secondary = secondary;
         Tertiary = tertiary;

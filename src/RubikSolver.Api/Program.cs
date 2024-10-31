@@ -1,5 +1,7 @@
 using System.Text.Json.Serialization;
-using RubikSolver.Application.Cube2X2;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using RubikSolver.Cube2X2.Application;
 
 var builder = WebApplication.CreateBuilder(args);
 

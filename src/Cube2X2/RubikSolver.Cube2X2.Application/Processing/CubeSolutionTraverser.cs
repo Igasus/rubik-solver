@@ -1,13 +1,16 @@
-using RubikSolver.Application.Cube2X2.Hashing;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using RubikSolver.Cube2X2.Application.Hashing;
 using RubikSolver.Cube2X2.Core.Models;
 
-namespace RubikSolver.Application.Cube2X2.Processing;
+namespace RubikSolver.Cube2X2.Application.Processing;
 
 public class CubeSolutionTraverser : IDisposable, IAsyncDisposable
 {
     private readonly ICubeHashManager _cubeHashManager;
     private readonly Queue<long> _stateQueue;
-    
+
     public Dictionary<long, long> SolutionTree { get; }
 
     public CubeSolutionTraverser(ICubeHashManager cubeHashManager, Cube initialCube)
@@ -17,7 +20,7 @@ public class CubeSolutionTraverser : IDisposable, IAsyncDisposable
 
         ArgumentNullException.ThrowIfNull(initialCube);
         var initialCubeHash = cubeHashManager.GetHash(initialCube);
-        
+
         _stateQueue = [];
         _stateQueue.Enqueue(initialCubeHash);
         SolutionTree = [];
@@ -30,7 +33,7 @@ public class CubeSolutionTraverser : IDisposable, IAsyncDisposable
 
         if (_stateQueue.Count == 0)
             return false;
-        
+
         var currentCubeHash = _stateQueue.Dequeue();
         using var cube = _cubeHashManager.GetCube(currentCubeHash);
 

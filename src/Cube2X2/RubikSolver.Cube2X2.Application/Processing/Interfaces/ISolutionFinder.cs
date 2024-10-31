@@ -1,7 +1,7 @@
-using RubikSolver.Application.Cube2X2.Data;
+using RubikSolver.Cube2X2.Application.Data;
 using RubikSolver.Cube2X2.Core.Models;
 
-namespace RubikSolver.Application.Cube2X2.Processing.Interfaces;
+namespace RubikSolver.Cube2X2.Application.Processing.Interfaces;
 
 public interface ISolutionFinder
 {

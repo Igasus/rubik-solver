@@ -1,7 +1,8 @@
-using RubikSolver.Application.Cube2X2.Data;
+using System.Collections.Generic;
+using RubikSolver.Cube2X2.Application.Data;
 using RubikSolver.Cube2X2.Core.Models;
 
-namespace RubikSolver.Application.Cube2X2.Format;
+namespace RubikSolver.Cube2X2.Application.Format;
 
 public interface ICubeFormatManager
 {

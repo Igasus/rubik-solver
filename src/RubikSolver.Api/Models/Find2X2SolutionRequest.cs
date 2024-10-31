@@ -1,4 +1,4 @@
-using RubikSolver.Application.Cube2X2.Data;
+using RubikSolver.Cube2X2.Application.Data;
 
 namespace RubikSolver.Api.Models;
 

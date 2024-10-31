@@ -1,9 +1,12 @@
-using RubikSolver.Application.Cube2X2.Data;
-using RubikSolver.Application.Cube2X2.Hashing;
-using RubikSolver.Application.Cube2X2.Processing.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using RubikSolver.Cube2X2.Application.Data;
+using RubikSolver.Cube2X2.Application.Hashing;
+using RubikSolver.Cube2X2.Application.Processing.Interfaces;
 using RubikSolver.Cube2X2.Core.Models;
 
-namespace RubikSolver.Application.Cube2X2.Processing;
+namespace RubikSolver.Cube2X2.Application.Processing;
 
 public class SolutionFinder : ISolutionFinder
 {
@@ -14,7 +17,7 @@ public class SolutionFinder : ISolutionFinder
     {
         ArgumentNullException.ThrowIfNull(cubeHashManager);
         ArgumentNullException.ThrowIfNull(formulaService);
-        
+
         _cubeHashManager = cubeHashManager;
         _formulaService = formulaService;
     }
@@ -72,7 +75,7 @@ public class SolutionFinder : ISolutionFinder
     {
         var directPath = BuildReversedHashPath(directFlowSolutionTree, keyCubeHash).Reverse();
         var counterPath = BuildReversedHashPath(counterFlowSolutionTree, keyCubeHash).ToList();
-        long[] fullPath = [..directPath, ..counterPath[1..]];
+        long[] fullPath = [.. directPath, .. counterPath[1..]];
 
         return fullPath;
     }

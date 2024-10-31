@@ -1,11 +1,11 @@
 using Microsoft.Extensions.DependencyInjection;
-using RubikSolver.Application.Cube2X2.Format;
-using RubikSolver.Application.Cube2X2.Hashing;
-using RubikSolver.Application.Cube2X2.Processing;
-using RubikSolver.Application.Cube2X2.Processing.Interfaces;
+using RubikSolver.Cube2X2.Application.Format;
+using RubikSolver.Cube2X2.Application.Hashing;
+using RubikSolver.Cube2X2.Application.Processing;
+using RubikSolver.Cube2X2.Application.Processing.Interfaces;
 using RubikSolver.Cube2X2.Core.DefaultData;
 
-namespace RubikSolver.Application.Cube2X2;
+namespace RubikSolver.Cube2X2.Application;
 
 public static class Setup
 {

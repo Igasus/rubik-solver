@@ -29,7 +29,7 @@ public class DefaultDataProvider : IDefaultDataProvider
 
         return new Piece(originalPositionIndex, colorIndexes);
     }
-    
+
     public Piece GetPieceByColors(byte[] colorIndexesClockwise)
     {
         if (colorIndexesClockwise.Length != Constants.PieceColorsCount)
@@ -54,7 +54,7 @@ public class DefaultDataProvider : IDefaultDataProvider
 
         throw new ArgumentException(ErrorMessages.InvalidPieceColorIndexes, nameof(colorIndexesClockwise));
     }
-    
+
     public Cube GetSolvedCube()
     {
         var pieces = new Piece[Constants.CubePiecesCount];
@@ -71,7 +71,7 @@ public class DefaultDataProvider : IDefaultDataProvider
         var firstMatchColorIndex = Array.IndexOf(actualColorIndexes, expectedColorIndexes[0]);
         if (firstMatchColorIndex < 0)
             return false;
-        
+
         for (var i = 1; i < actualColorIndexes.Length; i++)
         {
             var index = (firstMatchColorIndex + i) % actualColorIndexes.Length;

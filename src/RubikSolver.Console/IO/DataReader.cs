@@ -1,4 +1,5 @@
-using RubikSolver.Application.Cube2X2.Data;
+using System;
+using RubikSolver.Cube2X2.Application.Data;
 
 namespace RubikSolver.Console.IO;
 
@@ -17,7 +18,7 @@ public class DataReader
             ..ff
 
             """);
-        
+
         System.Console.Write("..");
         var s4Top = System.Console.ReadLine();
         System.Console.Write("..");

@@ -1,8 +1,11 @@
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using RubikSolver.Api.Models;
-using RubikSolver.Application.Cube2X2.Data;
-using RubikSolver.Application.Cube2X2.Format;
-using RubikSolver.Application.Cube2X2.Processing.Interfaces;
+using RubikSolver.Cube2X2.Application.Data;
+using RubikSolver.Cube2X2.Application.Format;
+using RubikSolver.Cube2X2.Application.Processing.Interfaces;
 using RubikSolver.Cube2X2.Core.DefaultData;
 
 namespace RubikSolver.Api.Controllers;
@@ -26,13 +29,13 @@ public class Cube2X2Controller : ControllerBase
         ArgumentNullException.ThrowIfNull(cubeFormatManager);
         ArgumentNullException.ThrowIfNull(solutionFinder);
         ArgumentNullException.ThrowIfNull(formulaService);
-        
+
         _defaultDataProvider = defaultDataProvider;
         _cubeFormatManager = cubeFormatManager;
         _solutionFinder = solutionFinder;
         _formulaService = formulaService;
     }
-    
+
     [HttpPost("solve")]
     public async Task<IActionResult> SolveAsync([FromBody] Find2X2SolutionRequest request)
     {

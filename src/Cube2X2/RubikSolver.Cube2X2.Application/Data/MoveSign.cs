@@ -1,4 +1,4 @@
-namespace RubikSolver.Application.Cube2X2.Data;
+namespace RubikSolver.Cube2X2.Application.Data;
 
 public enum MoveSign
 {

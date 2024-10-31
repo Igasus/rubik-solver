@@ -1,9 +1,12 @@
-using RubikSolver.Application.Cube2X2.Data;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using RubikSolver.Cube2X2.Application.Data;
 using RubikSolver.Cube2X2.Core;
 using RubikSolver.Cube2X2.Core.DefaultData;
 using RubikSolver.Cube2X2.Core.Models;
 
-namespace RubikSolver.Application.Cube2X2.Format;
+namespace RubikSolver.Cube2X2.Application.Format;
 
 public class CubeFormatManager : ICubeFormatManager
 {

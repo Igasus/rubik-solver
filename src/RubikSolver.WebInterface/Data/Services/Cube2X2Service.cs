@@ -38,7 +38,7 @@ public class Cube2X2Service : ICube2X2Service
         var response = await httpClient.SendAsync(request);
         if (!response.IsSuccessStatusCode)
             return [];
-        
+
         var responseBody = await response.Content.ReadFromJsonAsync<SolveCube2X2Response>();
 
         return responseBody?.Formula ?? [];

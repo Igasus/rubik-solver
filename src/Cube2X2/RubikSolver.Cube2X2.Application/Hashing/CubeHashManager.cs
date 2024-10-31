@@ -1,8 +1,9 @@
+using System;
 using RubikSolver.Cube2X2.Core;
 using RubikSolver.Cube2X2.Core.DefaultData;
 using RubikSolver.Cube2X2.Core.Models;
 
-namespace RubikSolver.Application.Cube2X2.Hashing;
+namespace RubikSolver.Cube2X2.Application.Hashing;
 
 public class CubeHashManager : ICubeHashManager
 {
@@ -17,7 +18,7 @@ public class CubeHashManager : ICubeHashManager
     public long GetHash(Cube cube)
     {
         ArgumentNullException.ThrowIfNull(cube);
-        
+
         long hash = 0;
 
         foreach (var piece in cube.Pieces)

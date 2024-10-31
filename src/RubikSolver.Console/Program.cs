@@ -1,11 +1,11 @@
-﻿using RubikSolver.Application.Cube2X2.Format;
-using RubikSolver.Application.Cube2X2.Hashing;
-using RubikSolver.Application.Cube2X2.Processing;
+﻿using System;
 using RubikSolver.Console.IO;
+using RubikSolver.Cube2X2.Application.Format;
+using RubikSolver.Cube2X2.Application.Hashing;
+using RubikSolver.Cube2X2.Application.Processing;
 using RubikSolver.Cube2X2.Core.DefaultData;
 
 var dataReader = new DataReader();
-var dataWriter = new DataWriter();
 
 var defaultDataProvider = new DefaultDataProvider();
 var cubeViewManager = new CubeFormatManager(defaultDataProvider);

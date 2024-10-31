@@ -2,9 +2,8 @@
 
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
+        <ImplicitUsings>disable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <RootNamespace>RubikSolver.Application.Cube2X2</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
